@@ -1,0 +1,979 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D4EBDFDB281E5F8300BFEB1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBDFDA281E5F8300BFEB1B /* AppDelegate.swift */; };
+		D4EBDFDD281E5F8300BFEB1B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBDFDC281E5F8300BFEB1B /* GameViewController.swift */; };
+		D4EBDFE0281E5F8300BFEB1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4EBDFDE281E5F8300BFEB1B /* Main.storyboard */; };
+		D4EBDFE3281E5F8300BFEB1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4EBDFE1281E5F8300BFEB1B /* LaunchScreen.storyboard */; };
+		D4EBDFE7281E5F8400BFEB1B /* physics-engine.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D4EBDFE6281E5F8400BFEB1B /* physics-engine.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D4EBDFED281E5F8400BFEB1B /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4EBDFEB281E5F8400BFEB1B /* Interface.storyboard */; };
+		D4EBDFF3281E5F8400BFEB1B /* physics-engine Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D4EBDFF2281E5F8400BFEB1B /* physics-engine Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D4EBDFF8281E5F8400BFEB1B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBDFF7281E5F8400BFEB1B /* InterfaceController.swift */; };
+		D4EBDFFA281E5F8400BFEB1B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBDFF9281E5F8400BFEB1B /* ExtensionDelegate.swift */; };
+		D4EBE003281E5F8400BFEB1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBE002281E5F8400BFEB1B /* AppDelegate.swift */; };
+		D4EBE005281E5F8400BFEB1B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBE004281E5F8400BFEB1B /* GameViewController.swift */; };
+		D4EBE008281E5F8400BFEB1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4EBE006281E5F8400BFEB1B /* Main.storyboard */; };
+		D4EBE00B281E5F8400BFEB1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4EBE009281E5F8400BFEB1B /* LaunchScreen.storyboard */; };
+		D4EBE013281E5F8400BFEB1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBE012281E5F8400BFEB1B /* AppDelegate.swift */; };
+		D4EBE015281E5F8400BFEB1B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBE014281E5F8400BFEB1B /* GameViewController.swift */; };
+		D4EBE018281E5F8400BFEB1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4EBE016281E5F8400BFEB1B /* Main.storyboard */; };
+		D4EBE01A281E5F8400BFEB1B /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBDFD0281E5F7D00BFEB1B /* GameController.swift */; };
+		D4EBE01B281E5F8400BFEB1B /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBDFD0281E5F7D00BFEB1B /* GameController.swift */; };
+		D4EBE01C281E5F8400BFEB1B /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBDFD0281E5F7D00BFEB1B /* GameController.swift */; };
+		D4EBE01D281E5F8400BFEB1B /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBDFD0281E5F7D00BFEB1B /* GameController.swift */; };
+		D4EBE01E281E5F8400BFEB1B /* Art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D4EBDFD1281E5F7D00BFEB1B /* Art.scnassets */; };
+		D4EBE01F281E5F8400BFEB1B /* Art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D4EBDFD1281E5F7D00BFEB1B /* Art.scnassets */; };
+		D4EBE020281E5F8400BFEB1B /* Art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D4EBDFD1281E5F7D00BFEB1B /* Art.scnassets */; };
+		D4EBE021281E5F8400BFEB1B /* Art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D4EBDFD1281E5F7D00BFEB1B /* Art.scnassets */; };
+		D4EBE022281E5F8400BFEB1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4EBDFD2281E5F8300BFEB1B /* Assets.xcassets */; };
+		D4EBE023281E5F8400BFEB1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4EBDFD2281E5F8300BFEB1B /* Assets.xcassets */; };
+		D4EBE024281E5F8400BFEB1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4EBDFD2281E5F8300BFEB1B /* Assets.xcassets */; };
+		D4EBE025281E5F8400BFEB1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4EBDFD2281E5F8300BFEB1B /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4EBDFE8281E5F8400BFEB1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4EBDFCB281E5F7D00BFEB1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4EBDFE5281E5F8400BFEB1B;
+			remoteInfo = "physics-engine watchOS App";
+		};
+		D4EBDFF4281E5F8400BFEB1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4EBDFCB281E5F7D00BFEB1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4EBDFF1281E5F8400BFEB1B;
+			remoteInfo = "physics-engine watchOS App Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D4EBE02B281E5F8400BFEB1B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D4EBDFF3281E5F8400BFEB1B /* physics-engine Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4EBE02F281E5F8400BFEB1B /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				D4EBDFE7281E5F8400BFEB1B /* physics-engine.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D4EBDFD0281E5F7D00BFEB1B /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		D4EBDFD1281E5F7D00BFEB1B /* Art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Art.scnassets; sourceTree = "<group>"; };
+		D4EBDFD2281E5F8300BFEB1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D4EBDFD7281E5F8300BFEB1B /* physics-engine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "physics-engine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4EBDFDA281E5F8300BFEB1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D4EBDFDC281E5F8300BFEB1B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		D4EBDFDF281E5F8300BFEB1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D4EBDFE2281E5F8300BFEB1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D4EBDFE6281E5F8400BFEB1B /* physics-engine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "physics-engine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4EBDFEC281E5F8400BFEB1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		D4EBDFF2281E5F8400BFEB1B /* physics-engine Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "physics-engine Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4EBDFF7281E5F8400BFEB1B /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		D4EBDFF9281E5F8400BFEB1B /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		D4EBDFFB281E5F8400BFEB1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4EBE000281E5F8400BFEB1B /* physics-engine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "physics-engine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4EBE002281E5F8400BFEB1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D4EBE004281E5F8400BFEB1B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		D4EBE007281E5F8400BFEB1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D4EBE00A281E5F8400BFEB1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D4EBE010281E5F8400BFEB1B /* physics-engine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "physics-engine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4EBE012281E5F8400BFEB1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D4EBE014281E5F8400BFEB1B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		D4EBE017281E5F8400BFEB1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D4EBE019281E5F8400BFEB1B /* physics_engine_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = physics_engine_macOS.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D4EBDFD4281E5F8300BFEB1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4EBDFEF281E5F8400BFEB1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4EBDFFD281E5F8400BFEB1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4EBE00D281E5F8400BFEB1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D4EBDFCA281E5F7D00BFEB1B = {
+			isa = PBXGroup;
+			children = (
+				D4EBDFCF281E5F7D00BFEB1B /* physics-engine Shared */,
+				D4EBDFD9281E5F8300BFEB1B /* physics-engine iOS */,
+				D4EBDFEA281E5F8400BFEB1B /* physics-engine watchOS App */,
+				D4EBDFF6281E5F8400BFEB1B /* physics-engine watchOS App Extension */,
+				D4EBE001281E5F8400BFEB1B /* physics-engine tvOS */,
+				D4EBE011281E5F8400BFEB1B /* physics-engine macOS */,
+				D4EBDFD8281E5F8300BFEB1B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D4EBDFCF281E5F7D00BFEB1B /* physics-engine Shared */ = {
+			isa = PBXGroup;
+			children = (
+				D4EBDFD0281E5F7D00BFEB1B /* GameController.swift */,
+				D4EBDFD1281E5F7D00BFEB1B /* Art.scnassets */,
+				D4EBDFD2281E5F8300BFEB1B /* Assets.xcassets */,
+			);
+			path = "physics-engine Shared";
+			sourceTree = "<group>";
+		};
+		D4EBDFD8281E5F8300BFEB1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4EBDFD7281E5F8300BFEB1B /* physics-engine.app */,
+				D4EBDFE6281E5F8400BFEB1B /* physics-engine.app */,
+				D4EBDFF2281E5F8400BFEB1B /* physics-engine Extension.appex */,
+				D4EBE000281E5F8400BFEB1B /* physics-engine.app */,
+				D4EBE010281E5F8400BFEB1B /* physics-engine.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D4EBDFD9281E5F8300BFEB1B /* physics-engine iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D4EBDFDA281E5F8300BFEB1B /* AppDelegate.swift */,
+				D4EBDFDC281E5F8300BFEB1B /* GameViewController.swift */,
+				D4EBDFDE281E5F8300BFEB1B /* Main.storyboard */,
+				D4EBDFE1281E5F8300BFEB1B /* LaunchScreen.storyboard */,
+			);
+			path = "physics-engine iOS";
+			sourceTree = "<group>";
+		};
+		D4EBDFEA281E5F8400BFEB1B /* physics-engine watchOS App */ = {
+			isa = PBXGroup;
+			children = (
+				D4EBDFEB281E5F8400BFEB1B /* Interface.storyboard */,
+			);
+			path = "physics-engine watchOS App";
+			sourceTree = "<group>";
+		};
+		D4EBDFF6281E5F8400BFEB1B /* physics-engine watchOS App Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D4EBDFF7281E5F8400BFEB1B /* InterfaceController.swift */,
+				D4EBDFF9281E5F8400BFEB1B /* ExtensionDelegate.swift */,
+				D4EBDFFB281E5F8400BFEB1B /* Info.plist */,
+			);
+			path = "physics-engine watchOS App Extension";
+			sourceTree = "<group>";
+		};
+		D4EBE001281E5F8400BFEB1B /* physics-engine tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				D4EBE002281E5F8400BFEB1B /* AppDelegate.swift */,
+				D4EBE004281E5F8400BFEB1B /* GameViewController.swift */,
+				D4EBE006281E5F8400BFEB1B /* Main.storyboard */,
+				D4EBE009281E5F8400BFEB1B /* LaunchScreen.storyboard */,
+			);
+			path = "physics-engine tvOS";
+			sourceTree = "<group>";
+		};
+		D4EBE011281E5F8400BFEB1B /* physics-engine macOS */ = {
+			isa = PBXGroup;
+			children = (
+				D4EBE012281E5F8400BFEB1B /* AppDelegate.swift */,
+				D4EBE014281E5F8400BFEB1B /* GameViewController.swift */,
+				D4EBE016281E5F8400BFEB1B /* Main.storyboard */,
+				D4EBE019281E5F8400BFEB1B /* physics_engine_macOS.entitlements */,
+			);
+			path = "physics-engine macOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D4EBDFD6281E5F8300BFEB1B /* physics-engine iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4EBE030281E5F8400BFEB1B /* Build configuration list for PBXNativeTarget "physics-engine iOS" */;
+			buildPhases = (
+				D4EBDFD3281E5F8300BFEB1B /* Sources */,
+				D4EBDFD4281E5F8300BFEB1B /* Frameworks */,
+				D4EBDFD5281E5F8300BFEB1B /* Resources */,
+				D4EBE02F281E5F8400BFEB1B /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4EBDFE9281E5F8400BFEB1B /* PBXTargetDependency */,
+			);
+			name = "physics-engine iOS";
+			productName = "physics-engine iOS";
+			productReference = D4EBDFD7281E5F8300BFEB1B /* physics-engine.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D4EBDFE5281E5F8400BFEB1B /* physics-engine watchOS App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4EBE02C281E5F8400BFEB1B /* Build configuration list for PBXNativeTarget "physics-engine watchOS App" */;
+			buildPhases = (
+				D4EBDFE4281E5F8400BFEB1B /* Resources */,
+				D4EBE02B281E5F8400BFEB1B /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4EBDFF5281E5F8400BFEB1B /* PBXTargetDependency */,
+			);
+			name = "physics-engine watchOS App";
+			productName = "physics-engine watchOS App";
+			productReference = D4EBDFE6281E5F8400BFEB1B /* physics-engine.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		D4EBDFF1281E5F8400BFEB1B /* physics-engine watchOS App Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4EBE028281E5F8400BFEB1B /* Build configuration list for PBXNativeTarget "physics-engine watchOS App Extension" */;
+			buildPhases = (
+				D4EBDFEE281E5F8400BFEB1B /* Sources */,
+				D4EBDFEF281E5F8400BFEB1B /* Frameworks */,
+				D4EBDFF0281E5F8400BFEB1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "physics-engine watchOS App Extension";
+			productName = "physics-engine watchOS App Extension";
+			productReference = D4EBDFF2281E5F8400BFEB1B /* physics-engine Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		D4EBDFFF281E5F8400BFEB1B /* physics-engine tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4EBE033281E5F8400BFEB1B /* Build configuration list for PBXNativeTarget "physics-engine tvOS" */;
+			buildPhases = (
+				D4EBDFFC281E5F8400BFEB1B /* Sources */,
+				D4EBDFFD281E5F8400BFEB1B /* Frameworks */,
+				D4EBDFFE281E5F8400BFEB1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "physics-engine tvOS";
+			productName = "physics-engine tvOS";
+			productReference = D4EBE000281E5F8400BFEB1B /* physics-engine.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D4EBE00F281E5F8400BFEB1B /* physics-engine macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4EBE036281E5F8400BFEB1B /* Build configuration list for PBXNativeTarget "physics-engine macOS" */;
+			buildPhases = (
+				D4EBE00C281E5F8400BFEB1B /* Sources */,
+				D4EBE00D281E5F8400BFEB1B /* Frameworks */,
+				D4EBE00E281E5F8400BFEB1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "physics-engine macOS";
+			productName = "physics-engine macOS";
+			productReference = D4EBE010281E5F8400BFEB1B /* physics-engine.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D4EBDFCB281E5F7D00BFEB1B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					D4EBDFD6281E5F8300BFEB1B = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					D4EBDFE5281E5F8400BFEB1B = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					D4EBDFF1281E5F8400BFEB1B = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					D4EBDFFF281E5F8400BFEB1B = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					D4EBE00F281E5F8400BFEB1B = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+				};
+			};
+			buildConfigurationList = D4EBDFCE281E5F7D00BFEB1B /* Build configuration list for PBXProject "physics-engine" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D4EBDFCA281E5F7D00BFEB1B;
+			productRefGroup = D4EBDFD8281E5F8300BFEB1B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D4EBDFD6281E5F8300BFEB1B /* physics-engine iOS */,
+				D4EBDFE5281E5F8400BFEB1B /* physics-engine watchOS App */,
+				D4EBDFF1281E5F8400BFEB1B /* physics-engine watchOS App Extension */,
+				D4EBDFFF281E5F8400BFEB1B /* physics-engine tvOS */,
+				D4EBE00F281E5F8400BFEB1B /* physics-engine macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D4EBDFD5281E5F8300BFEB1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4EBDFE0281E5F8300BFEB1B /* Main.storyboard in Resources */,
+				D4EBDFE3281E5F8300BFEB1B /* LaunchScreen.storyboard in Resources */,
+				D4EBE022281E5F8400BFEB1B /* Assets.xcassets in Resources */,
+				D4EBE01E281E5F8400BFEB1B /* Art.scnassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4EBDFE4281E5F8400BFEB1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4EBE023281E5F8400BFEB1B /* Assets.xcassets in Resources */,
+				D4EBDFED281E5F8400BFEB1B /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4EBDFF0281E5F8400BFEB1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4EBE01F281E5F8400BFEB1B /* Art.scnassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4EBDFFE281E5F8400BFEB1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4EBE008281E5F8400BFEB1B /* Main.storyboard in Resources */,
+				D4EBE00B281E5F8400BFEB1B /* LaunchScreen.storyboard in Resources */,
+				D4EBE024281E5F8400BFEB1B /* Assets.xcassets in Resources */,
+				D4EBE020281E5F8400BFEB1B /* Art.scnassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4EBE00E281E5F8400BFEB1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4EBE018281E5F8400BFEB1B /* Main.storyboard in Resources */,
+				D4EBE025281E5F8400BFEB1B /* Assets.xcassets in Resources */,
+				D4EBE021281E5F8400BFEB1B /* Art.scnassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D4EBDFD3281E5F8300BFEB1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4EBDFDD281E5F8300BFEB1B /* GameViewController.swift in Sources */,
+				D4EBE01A281E5F8400BFEB1B /* GameController.swift in Sources */,
+				D4EBDFDB281E5F8300BFEB1B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4EBDFEE281E5F8400BFEB1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4EBDFFA281E5F8400BFEB1B /* ExtensionDelegate.swift in Sources */,
+				D4EBE01B281E5F8400BFEB1B /* GameController.swift in Sources */,
+				D4EBDFF8281E5F8400BFEB1B /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4EBDFFC281E5F8400BFEB1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4EBE005281E5F8400BFEB1B /* GameViewController.swift in Sources */,
+				D4EBE01C281E5F8400BFEB1B /* GameController.swift in Sources */,
+				D4EBE003281E5F8400BFEB1B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4EBE00C281E5F8400BFEB1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4EBE015281E5F8400BFEB1B /* GameViewController.swift in Sources */,
+				D4EBE01D281E5F8400BFEB1B /* GameController.swift in Sources */,
+				D4EBE013281E5F8400BFEB1B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D4EBDFE9281E5F8400BFEB1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4EBDFE5281E5F8400BFEB1B /* physics-engine watchOS App */;
+			targetProxy = D4EBDFE8281E5F8400BFEB1B /* PBXContainerItemProxy */;
+		};
+		D4EBDFF5281E5F8400BFEB1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4EBDFF1281E5F8400BFEB1B /* physics-engine watchOS App Extension */;
+			targetProxy = D4EBDFF4281E5F8400BFEB1B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D4EBDFDE281E5F8300BFEB1B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4EBDFDF281E5F8300BFEB1B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D4EBDFE1281E5F8300BFEB1B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4EBDFE2281E5F8300BFEB1B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D4EBDFEB281E5F8400BFEB1B /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4EBDFEC281E5F8400BFEB1B /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		D4EBE006281E5F8400BFEB1B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4EBE007281E5F8400BFEB1B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D4EBE009281E5F8400BFEB1B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4EBE00A281E5F8400BFEB1B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D4EBE016281E5F8400BFEB1B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4EBE017281E5F8400BFEB1B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D4EBE026281E5F8400BFEB1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D4EBE027281E5F8400BFEB1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		D4EBE029281E5F8400BFEB1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CTJBS6EJ84;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "physics-engine watchOS App Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "physics-engine watchOS App Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = "$(PRODUCT_MODULE_NAME).ExtensionDelegate";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bitsllc.physics-engine.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "physics-engine Extension";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		D4EBE02A281E5F8400BFEB1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CTJBS6EJ84;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "physics-engine watchOS App Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "physics-engine watchOS App Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = "$(PRODUCT_MODULE_NAME).ExtensionDelegate";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bitsllc.physics-engine.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "physics-engine Extension";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
+		D4EBE02D281E5F8400BFEB1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CTJBS6EJ84;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = physics_engine_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "physics-engine";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.bitsllc.physics-engine";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bitsllc.physics-engine.watchkitapp";
+				PRODUCT_NAME = "physics-engine";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Debug;
+		};
+		D4EBE02E281E5F8400BFEB1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CTJBS6EJ84;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = physics_engine_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = "physics-engine";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.bitsllc.physics-engine";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bitsllc.physics-engine.watchkitapp";
+				PRODUCT_NAME = "physics-engine";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 8.5;
+			};
+			name = Release;
+		};
+		D4EBE031281E5F8400BFEB1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CTJBS6EJ84;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bitsllc.physics-engine";
+				PRODUCT_NAME = "physics-engine";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D4EBE032281E5F8400BFEB1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CTJBS6EJ84;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bitsllc.physics-engine";
+				PRODUCT_NAME = "physics-engine";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D4EBE034281E5F8400BFEB1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "tvOS App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CTJBS6EJ84;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bitsllc.physics-engine";
+				PRODUCT_NAME = "physics-engine";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 15.4;
+			};
+			name = Debug;
+		};
+		D4EBE035281E5F8400BFEB1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "tvOS App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CTJBS6EJ84;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bitsllc.physics-engine";
+				PRODUCT_NAME = "physics-engine";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 15.4;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D4EBE037281E5F8400BFEB1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "physics-engine macOS/physics_engine_macOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CTJBS6EJ84;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bitsllc.physics-engine";
+				PRODUCT_NAME = "physics-engine";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D4EBE038281E5F8400BFEB1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "physics-engine macOS/physics_engine_macOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CTJBS6EJ84;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bitsllc.physics-engine";
+				PRODUCT_NAME = "physics-engine";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D4EBDFCE281E5F7D00BFEB1B /* Build configuration list for PBXProject "physics-engine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4EBE026281E5F8400BFEB1B /* Debug */,
+				D4EBE027281E5F8400BFEB1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4EBE028281E5F8400BFEB1B /* Build configuration list for PBXNativeTarget "physics-engine watchOS App Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4EBE029281E5F8400BFEB1B /* Debug */,
+				D4EBE02A281E5F8400BFEB1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4EBE02C281E5F8400BFEB1B /* Build configuration list for PBXNativeTarget "physics-engine watchOS App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4EBE02D281E5F8400BFEB1B /* Debug */,
+				D4EBE02E281E5F8400BFEB1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4EBE030281E5F8400BFEB1B /* Build configuration list for PBXNativeTarget "physics-engine iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4EBE031281E5F8400BFEB1B /* Debug */,
+				D4EBE032281E5F8400BFEB1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4EBE033281E5F8400BFEB1B /* Build configuration list for PBXNativeTarget "physics-engine tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4EBE034281E5F8400BFEB1B /* Debug */,
+				D4EBE035281E5F8400BFEB1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4EBE036281E5F8400BFEB1B /* Build configuration list for PBXNativeTarget "physics-engine macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4EBE037281E5F8400BFEB1B /* Debug */,
+				D4EBE038281E5F8400BFEB1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D4EBDFCB281E5F7D00BFEB1B /* Project object */;
+}
