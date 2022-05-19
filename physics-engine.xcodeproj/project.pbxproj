@@ -35,6 +35,10 @@
 		D4EBE023281E5F8400BFEB1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4EBDFD2281E5F8300BFEB1B /* Assets.xcassets */; };
 		D4EBE024281E5F8400BFEB1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4EBDFD2281E5F8300BFEB1B /* Assets.xcassets */; };
 		D4EBE025281E5F8400BFEB1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4EBDFD2281E5F8300BFEB1B /* Assets.xcassets */; };
+		D4EBE03A281E601000BFEB1B /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBE039281E601000BFEB1B /* Planet.swift */; };
+		D4EBE03B281E626700BFEB1B /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBE039281E601000BFEB1B /* Planet.swift */; };
+		D4EBE03C281E626800BFEB1B /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBE039281E601000BFEB1B /* Planet.swift */; };
+		D4EBE03D281E626800BFEB1B /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBE039281E601000BFEB1B /* Planet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +108,7 @@
 		D4EBE014281E5F8400BFEB1B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		D4EBE017281E5F8400BFEB1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4EBE019281E5F8400BFEB1B /* physics_engine_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = physics_engine_macOS.entitlements; sourceTree = "<group>"; };
+		D4EBE039281E601000BFEB1B /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +162,7 @@
 				D4EBDFD0281E5F7D00BFEB1B /* GameController.swift */,
 				D4EBDFD1281E5F7D00BFEB1B /* Art.scnassets */,
 				D4EBDFD2281E5F8300BFEB1B /* Assets.xcassets */,
+				D4EBE039281E601000BFEB1B /* Planet.swift */,
 			);
 			path = "physics-engine Shared";
 			sourceTree = "<group>";
@@ -423,6 +429,7 @@
 				D4EBDFDD281E5F8300BFEB1B /* GameViewController.swift in Sources */,
 				D4EBE01A281E5F8400BFEB1B /* GameController.swift in Sources */,
 				D4EBDFDB281E5F8300BFEB1B /* AppDelegate.swift in Sources */,
+				D4EBE03A281E601000BFEB1B /* Planet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +440,7 @@
 				D4EBDFFA281E5F8400BFEB1B /* ExtensionDelegate.swift in Sources */,
 				D4EBE01B281E5F8400BFEB1B /* GameController.swift in Sources */,
 				D4EBDFF8281E5F8400BFEB1B /* InterfaceController.swift in Sources */,
+				D4EBE03B281E626700BFEB1B /* Planet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +451,7 @@
 				D4EBE005281E5F8400BFEB1B /* GameViewController.swift in Sources */,
 				D4EBE01C281E5F8400BFEB1B /* GameController.swift in Sources */,
 				D4EBE003281E5F8400BFEB1B /* AppDelegate.swift in Sources */,
+				D4EBE03C281E626800BFEB1B /* Planet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +462,7 @@
 				D4EBE015281E5F8400BFEB1B /* GameViewController.swift in Sources */,
 				D4EBE01D281E5F8400BFEB1B /* GameController.swift in Sources */,
 				D4EBE013281E5F8400BFEB1B /* AppDelegate.swift in Sources */,
+				D4EBE03D281E626800BFEB1B /* Planet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
