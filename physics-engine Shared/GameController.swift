@@ -43,13 +43,13 @@ class GameController: NSObject, SCNSceneRendererDelegate {
         let planet1 = Planet(1, mass: 4e9, radius: 10,
                              position: SCNVector3(-10,0,-10),
                              velocity: SCNVector3(0,0,0))
-        let planet2 = Planet(2, mass: 200, radius: 5,
+        let planet2 = Planet(2, mass: 2e9, radius: 5,
                              position: SCNVector3(50,0,50),
-                             velocity: SCNVector3(-8,-8,5))
-//        let planet3 = Planet(3, mass: 400, radius: 8,
-//                             position: SCNVector3(100,0,100),
-//                             velocity: SCNVector3(8,8,2))
-        planets = [planet1, planet2]
+                             velocity: SCNVector3(-0.2,-0.2,0.05))
+        let planet3 = Planet(3, mass: 4e10, radius: 8,
+                             position: SCNVector3(100,0,100),
+                             velocity: SCNVector3(0,0,0))
+        planets = [planet1, planet2, planet3]
         
         planets.forEach { planet in
             scene.rootNode.addChildNode(planet.node)
@@ -97,7 +97,7 @@ class GameController: NSObject, SCNSceneRendererDelegate {
             planet.animate(planets: planets)
         }
         
-        let mid = (planets[0].position + planets[1].position) / 2
+        let mid = (planets[0].position + planets[1].position + planets[2].position) / 3
         let center = mid
         cameraNode.position = center
 //        cameraNode.position.y = planets[0].position.y + planets[0].distance(to: planets[1]) * 2

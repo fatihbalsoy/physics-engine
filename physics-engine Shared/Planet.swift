@@ -62,20 +62,36 @@ public class Planet {
         return distance(to: planet) <= radius + planet.radius
     }
     
+    /**
+     - planet: The other planet affecting this planet
+     - force: The force being applied by the other planet
+     */
     func apply(force: Double, towards planet: Planet) {
         let direction = planet.position - self.position
         let forceVector = direction * -force
+        let acceleration = forceVector / mass
 //        self.position = self.position - forceVector
 //        print("force:", force)
+//        print("acceleration:", acceleration)
         
         if (colliding(with: planet)) {
-//            self.position = self.position + forceVector
+            // Collisions and Momentum
+            // Σ mv_i = Σ mv_f
+            // mv_i1 + mv_i2 = mv_f1 + mv_f2
+            // Need angles: https://www.nayuki.io/page/angles-in-elastic-two-body-collisions
+            
+            // Conservation of Momemtum
+            // Σ (1/2)mv_i^2 = Σ (1/2)mv_f^2
+            // (1/2)mv_i1^2 + (1/2)mv_i2^2 = (1/2)mv_f1^2 + (1/2)mv_f2^2
+            
+            // Not accurate
+//            self.position = self.position + acceleration
 //            self.position.x -= radius + planet.velocity.x
 //            self.position.y -= radius + planet.velocity.y
 //            velocity = SCNVector3(-planet.velocity.x, 0, -planet.velocity.y)
         } else {
             self.position = position + velocity
-            velocity = velocity - forceVector
+            velocity = velocity - acceleration
         }
     }
 }
