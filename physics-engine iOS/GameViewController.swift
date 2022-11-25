@@ -22,7 +22,7 @@ class GameViewController: UIViewController {
         self.gameController = GameController(sceneRenderer: gameView)
         
         // Allow the user to manipulate the camera
-        self.gameView.allowsCameraControl = true
+        self.gameView.allowsCameraControl = false
         
         // Show statistics such as fps and timing information
         self.gameView.showsStatistics = true
@@ -42,6 +42,7 @@ class GameViewController: UIViewController {
         // Highlight the tapped nodes
         let p = gestureRecognizer.location(in: gameView)
         gameController.highlightNodes(atPoint: p)
+        gameController.setCamera(atPoint: p)
     }
     
     override var shouldAutorotate: Bool {

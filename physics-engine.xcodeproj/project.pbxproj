@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D44F857F2930692600BA280B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44F857E2930692600BA280B /* Extensions.swift */; };
+		D44F85802930692600BA280B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44F857E2930692600BA280B /* Extensions.swift */; };
+		D44F85812930692600BA280B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44F857E2930692600BA280B /* Extensions.swift */; };
+		D44F85822930692600BA280B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44F857E2930692600BA280B /* Extensions.swift */; };
 		D4EBDFDB281E5F8300BFEB1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBDFDA281E5F8300BFEB1B /* AppDelegate.swift */; };
 		D4EBDFDD281E5F8300BFEB1B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBDFDC281E5F8300BFEB1B /* GameViewController.swift */; };
 		D4EBDFE0281E5F8300BFEB1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4EBDFDE281E5F8300BFEB1B /* Main.storyboard */; };
@@ -84,6 +88,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D44F857E2930692600BA280B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D4EBDFD0281E5F7D00BFEB1B /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		D4EBDFD1281E5F7D00BFEB1B /* Art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Art.scnassets; sourceTree = "<group>"; };
 		D4EBDFD2281E5F8300BFEB1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -163,6 +168,7 @@
 				D4EBDFD1281E5F7D00BFEB1B /* Art.scnassets */,
 				D4EBDFD2281E5F8300BFEB1B /* Assets.xcassets */,
 				D4EBE039281E601000BFEB1B /* Planet.swift */,
+				D44F857E2930692600BA280B /* Extensions.swift */,
 			);
 			path = "physics-engine Shared";
 			sourceTree = "<group>";
@@ -426,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D44F857F2930692600BA280B /* Extensions.swift in Sources */,
 				D4EBDFDD281E5F8300BFEB1B /* GameViewController.swift in Sources */,
 				D4EBE01A281E5F8400BFEB1B /* GameController.swift in Sources */,
 				D4EBDFDB281E5F8300BFEB1B /* AppDelegate.swift in Sources */,
@@ -437,6 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D44F85802930692600BA280B /* Extensions.swift in Sources */,
 				D4EBDFFA281E5F8400BFEB1B /* ExtensionDelegate.swift in Sources */,
 				D4EBE01B281E5F8400BFEB1B /* GameController.swift in Sources */,
 				D4EBDFF8281E5F8400BFEB1B /* InterfaceController.swift in Sources */,
@@ -448,6 +456,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D44F85812930692600BA280B /* Extensions.swift in Sources */,
 				D4EBE005281E5F8400BFEB1B /* GameViewController.swift in Sources */,
 				D4EBE01C281E5F8400BFEB1B /* GameController.swift in Sources */,
 				D4EBE003281E5F8400BFEB1B /* AppDelegate.swift in Sources */,
@@ -459,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D44F85822930692600BA280B /* Extensions.swift in Sources */,
 				D4EBE015281E5F8400BFEB1B /* GameViewController.swift in Sources */,
 				D4EBE01D281E5F8400BFEB1B /* GameController.swift in Sources */,
 				D4EBE013281E5F8400BFEB1B /* AppDelegate.swift in Sources */,

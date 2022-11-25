@@ -10,11 +10,12 @@ import SceneKit
 
 public let gravitationalConstant = 6.67e-11
 public class Planet {
-    private var id: Int!
+    public var id: Int!
     public var mass: Double!
     public var radius: Double!
     public var velocity: SCNVector3!
     public var node: SCNNode!
+    public var closest: Planet?
     
     public var position: SCNVector3 {
         set {
@@ -33,13 +34,14 @@ public class Planet {
         return lhs.id != rhs.id
     }
     
-    init(_ id: Int, mass: Double, radius: Double, position: SCNVector3, velocity: SCNVector3) {
+    init(_ id: Int, mass: Double, radius: Double, position: SCNVector3, velocity: SCNVector3, color: SCNColor? = SCNColor(white: 1, alpha: 1)) {
         self.id = id
         self.mass = mass
         self.radius = radius
         self.velocity = velocity
         
         self.node = SCNNode(geometry: SCNSphere(radius: radius))
+        self.node.geometry?.firstMaterial?.diffuse.contents = color
         self.position = position
     }
     
@@ -70,6 +72,14 @@ public class Planet {
         let direction = planet.position - self.position
         let forceVector = direction * -force
         let acceleration = forceVector / mass
+        
+        if let c = closest {
+            if (planet.distance(to: self) < c.distance(to: self)) {
+                self.closest = planet
+            }
+        } else {
+            closest = planet
+        }
 //        self.position = self.position - forceVector
 //        print("force:", force)
 //        print("acceleration:", acceleration)
@@ -83,6 +93,28 @@ public class Planet {
             // Conservation of Momemtum
             // Σ (1/2)mv_i^2 = Σ (1/2)mv_f^2
             // (1/2)mv_i1^2 + (1/2)mv_i2^2 = (1/2)mv_f1^2 + (1/2)mv_f2^2
+            
+//            print("Planet:",id!)
+//            print("== BEFORE ==")
+//            print("Velocity:",velocity!)
+//            print("Position:",position)
+            
+            let massDiv = (mass - planet.mass)/(mass + planet.mass)
+            let massDiv2 = (2*planet.mass)/(mass + planet.mass)
+            velocity = massDiv * velocity + massDiv2 * planet.velocity
+//            velocity = -1 * velocity + acceleration
+            self.position = position + velocity
+            
+            let massDivP2 = (planet.mass - mass)/(mass + planet.mass)
+            let massDiv2P2 = (2*mass)/(mass + planet.mass)
+            planet.velocity = massDivP2 * planet.velocity + massDiv2P2 * velocity
+//            planet.velocity = -1 * planet.velocity + acceleration
+            planet.position = planet.position + planet.velocity
+            
+//            print("== AFTER ==")
+//            print("Velocity:",velocity!)
+//            print("Position:",position)
+//            pause()
             
             // Not accurate
 //            self.position = self.position + acceleration
