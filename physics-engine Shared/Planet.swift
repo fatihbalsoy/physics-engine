@@ -15,6 +15,7 @@ public class Planet {
     public var radius: Double!
     public var velocity: SCNVector3!
     public var node: SCNNode!
+    public var collided: [Planet] = []
     public var scene: SCNScene!
 //    public var closest: Planet?
     
@@ -66,6 +67,36 @@ public class Planet {
         particleSystem.spreadingAngle = 30
 //        particleSystem.acceleration = SCNVector3(0.0,-1.8,0.0)
         self.node.addParticleSystem(particleSystem)
+    }
+    
+    private func collisionParticle(with planet: Planet) {
+        if (collided.contains(where: { p in
+            return p == planet
+        })) {
+            return
+        } else {
+            collided.append(planet)
+        }
+        
+        let particleSystem = SCNParticleSystem()
+        let mag = velocity.magnitude()
+        particleSystem.birthRate = mag * 1000 // 10000
+        particleSystem.particleLifeSpan = 100
+        particleSystem.warmupDuration = 0.5
+        particleSystem.emissionDuration = 5.0
+        particleSystem.loops = false
+        particleSystem.particleSize = 1
+        particleSystem.particleColor = (node.geometry?.firstMaterial?.diffuse.contents as? SCNColor) ?? SCNColor(white: 1, alpha: 1)
+        particleSystem.birthDirection = .random
+        particleSystem.speedFactor = 10
+        particleSystem.emittingDirection = SCNVector3(0,0,1)
+        particleSystem.emitterShape = .some(SCNSphere(radius: radius))
+        particleSystem.spreadingAngle = 360
+        particleSystem.particleVelocity = mag * 10
+        particleSystem.particleVelocityVariation = 100
+        if (self.node.particleSystems?.count ?? 0) < 10 {
+            self.node.addParticleSystem(particleSystem)
+        }
     }
     
     private func addLight() {
@@ -136,6 +167,8 @@ public class Planet {
 //            print("Velocity:",velocity!)
 //            print("Position:",position)
             
+            collisionParticle(with: planet)
+            
             let massDiv = (mass - planet.mass)/(mass + planet.mass)
             let massDiv2 = (2*planet.mass)/(mass + planet.mass)
             velocity = massDiv * velocity + massDiv2 * planet.velocity
@@ -159,6 +192,9 @@ public class Planet {
 //            self.position.y -= radius + planet.velocity.y
 //            velocity = SCNVector3(-planet.velocity.x, 0, -planet.velocity.y)
         } else {
+            collided.removeAll { p in
+                p == planet
+            }
             self.position = position + velocity
             velocity = velocity - acceleration
         }

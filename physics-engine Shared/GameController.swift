@@ -53,7 +53,7 @@ class GameController: NSObject, SCNSceneRendererDelegate {
         for i in 1...100 {
             print("Generating Planet #", i)
             let mass = Double.random(in: 1e4..<4e5)
-            let radius = (mass / 4e5) * 10 // 10
+            let radius = (mass / 4e5) * 20 // 10
             
             let vx = Double.random(in: -0.002..<0.002)
             let vy = Double.random(in: -0.002..<0.002)
