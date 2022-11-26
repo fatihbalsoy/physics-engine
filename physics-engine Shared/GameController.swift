@@ -15,10 +15,14 @@ import SceneKit
     typealias SCNColor = NSColor
     import AppKit
     typealias SCNTapGestureRecognizer = NSClickGestureRecognizer
+    typealias SCNFloat = CGFloat
+    typealias SCNImage = NSImage
 #else
     typealias SCNColor = UIColor
     import UIKit
     typealias SCNTapGestureRecognizer = UITapGestureRecognizer
+    typealias SCNFloat = Float
+    typealias SCNImage = UIImage
 #endif
 
 class GameController: NSObject, SCNSceneRendererDelegate {
@@ -27,9 +31,8 @@ class GameController: NSObject, SCNSceneRendererDelegate {
     let sceneRenderer: SCNSceneRenderer
     
     var planetToLookAt: Planet!
+    var planetPOV: Planet!
     var planets = [Planet]()
-    var lineNode: SCNNode!
-    var lineNode2: SCNNode!
     
     var cameraNode: SCNNode!
     
@@ -38,32 +41,19 @@ class GameController: NSObject, SCNSceneRendererDelegate {
         scene = SCNScene(named: "Art.scnassets/ship.scn")!
         
         super.init()
-        
         sceneRenderer.delegate = self
         
+        // Get camera node
         if let c = scene.rootNode.childNode(withName: "camera", recursively: true) {
             cameraNode = c
         }
         
-//        let planet1 = Planet(1, mass: 4e9, radius: 10,
-//                             position: SCNVector3(-10,0,-10),
-//                             velocity: SCNVector3(0,0,0))
-//        let planet2 = Planet(2, mass: 2e9, radius: 5,
-//                             position: SCNVector3(50,0,50),
-//                             velocity: SCNVector3(-0.2,-0.2,0.05))
-////                             velocity: SCNVector3(0,0,0))
-//        let planet3 = Planet(3, mass: 4e10, radius: 12,
-//                             position: SCNVector3(100,0,100),
-//                             velocity: SCNVector3(0,0,0))
+        // Randomly generate planets
         planets = []
-//        planets.append(planet1)
-//        planets.append(planet2)
-//        planets.append(planet3)
-        
         for i in 1...100 {
             print("Generating Planet #", i)
-            let mass = Double.random(in: 1..<4e5)
-            let radius = (mass / 4e5) * 10
+            let mass = Double.random(in: 1e4..<4e5)
+            let radius = (mass / 4e5) * 10 // 10
             
             let vx = Double.random(in: -0.002..<0.002)
             let vy = Double.random(in: -0.002..<0.002)
@@ -80,111 +70,102 @@ class GameController: NSObject, SCNSceneRendererDelegate {
             let cb = Double.random(in: 0..<1)
             let color = SCNColor(red: cr, green: cg, blue: cb, alpha: 1)
             
-            let p = Planet(i, mass: mass, radius: radius, position: pos, velocity: v, color: color)
+            let p = Planet(i, mass: mass, radius: radius, position: pos, velocity: v, scene: scene, color: color)
             planets.append(p)
         }
         
-        planets[0].node.addChildNode(cameraNode)
-        planetToLookAt = planets[1]
-        cameraNode.look(at: planetToLookAt.position)
-        cameraNode.position.z = planets[0].radius
-        
-        planets.forEach { planet in
-//            let lightNode = SCNNode()
-//            let light = SCNLight()
-//            light.type = .ambient
-//            light.intensity = 100
-//            light.shadowRadius = 1
-//            light.color = SCNColor(white: 0.5, alpha: 1)
-//            light.castsShadow = true
-//            lightNode.light = light
-//            planet.node.addChildNode(lightNode)
+        let realism = false
+        if (realism) {
+            // Milky Way
+            scene.background.contents = SCNImage(named: "8k_stars_milky_way")
             
-            createTrail(forNode: planet.node)
-            planet.node.castsShadow = true
+            // Earth (6e24) / 1e12 = 6e12
+            let earth = Planet(planets.count, mass: 6e12, radius: 6731, position: SCNVector3(0,0,12000), velocity: SCNVector3(5,0,0), scene: scene, color: SCNColor(red: 0, green: 0, blue: 1, alpha: 1))
+            earth.node.geometry?.firstMaterial?.diffuse.contents = SCNImage(named: "2k_earth_january")
+            earth.node.geometry?.firstMaterial?.metalness.contents = SCNImage(named: "2k_earth_specular_map")
+            earth.node.geometry?.firstMaterial?.clearCoatRoughness.contents = SCNImage(named: "2k_earth_specular_map")
+            earth.node.geometry?.firstMaterial?.normal.contents = SCNImage(named: "2k_earth_normal_map")
+            earth.node.geometry?.firstMaterial?.emission.contents = SCNImage(named: "world_emission_2k")
+            planets.append(earth)
+            
+            // Moon (7e22) / 1e12 = 7e10
+            let moon = Planet(planets.count, mass: 7e10, radius: 1737.4, position: SCNVector3(0,0,12000 + 384472), velocity: SCNVector3(7,0,0), scene: scene, color: SCNColor(white: 0.5, alpha: 1))
+            moon.node.geometry?.firstMaterial?.diffuse.contents = SCNImage(named: "2k_moon")
+            planets.append(moon)
+        }
+        
+        // Setup camera at a planet
+        planetPOV = planets[0]
+        planetToLookAt = planets[planets.count - 1]
+        planetPOV.node.addChildNode(cameraNode)
+        cameraNode.position.z = SCNFloat(planetPOV.radius)
+        planetPOV.node.removeAllParticleSystems()
+        planetPOV.node.geometry?.firstMaterial?.diffuse.contents = SCNColor(white: 0, alpha: 0)
+        cameraNode.look(at: planetToLookAt.position)
+        
+        // Add planets to scene
+        planets.forEach { planet in
             scene.rootNode.addChildNode(planet.node)
         }
-        planets[0].node.removeAllParticleSystems()
         
-        planets[0].node.runAction(SCNAction.repeatForever(.rotateBy(x: 0, y: 0, z: 0, duration: 0.5)))
-        
-//        lineNode = SCNNode(geometry: SCNPlane())
-//        scene.rootNode.addChildNode(lineNode)
+        // Run infinite action to get the scene to move
+        planets[0].node.runAction(SCNAction.repeatForever(.rotateBy(x: 0, y: 0, z: 0, duration: 0.125)))
         
         sceneRenderer.scene = scene
     }
     
-    func createTrail(forNode: SCNNode) {
-        let particleSystem = SCNParticleSystem()
-        particleSystem.birthRate = 10000
-        particleSystem.particleLifeSpan = 100
-        particleSystem.warmupDuration = 0.5
-        particleSystem.emissionDuration = 500.0
-        particleSystem.loops = true
-        particleSystem.particleSize = 0.5
-        particleSystem.particleColor = SCNColor(white: 1, alpha: 0.01)
-        particleSystem.birthDirection = .random
-        particleSystem.speedFactor = 7
-        particleSystem.emittingDirection = SCNVector3(0,0,0)
-        particleSystem.emitterShape = .some(SCNSphere(radius: 1.0))
-        particleSystem.spreadingAngle = 30
-//        particleSystem.acceleration = SCNVector3(0.0,-1.8,0.0)
-        forNode.addParticleSystem(particleSystem)
-    }
-    
-    func setCamera(atPoint point: CGPoint) {
+    func handleTap(atPoint point: CGPoint) {
         let hitResults = self.sceneRenderer.hitTest(point, options: [:])
         for result in hitResults {
-//            // get its material
-//            guard let material = result.node.geometry?.firstMaterial else {
-//                return
-//            }
-            
             for planet in planets.filter({$0.node.position.distance(to: result.node.position) == 0}) {
-                print("Planet #", planet.id!)
-                print("Mass:", planet.mass!)
-                planet.mass = planet.mass * 2
-                print("Mass:", planet.mass!)
-                
-                planetToLookAt = planet
-                cameraNode.look(at: planet.position)
+                doubleMass(for: planet)
+                setCamera(at: planet)
+                highlightNode(of: planet)
             }
         }
     }
     
-    func highlightNodes(atPoint point: CGPoint) {
-        let hitResults = self.sceneRenderer.hitTest(point, options: [:])
-        for result in hitResults {
-            // get its material
-            guard let material = result.node.geometry?.firstMaterial else {
-                return
-            }
-            
-            // highlight it
+    func doubleMass(for planet: Planet) {
+        print("Planet #", planet.id!)
+        print("Mass:", planet.mass!)
+        planet.mass = planet.mass * 2
+        print("Mass:", planet.mass!)
+    }
+    
+    func setCamera(at planet: Planet) {
+        planetToLookAt = planet
+        cameraNode.look(at: planet.position)
+    }
+    
+    func highlightNode(of planet: Planet) {
+        guard let material = planet.node.geometry?.firstMaterial else {
+            return
+        }
+        
+        // highlight it
+        SCNTransaction.begin()
+        SCNTransaction.animationDuration = 0.5
+        
+        // on completion - unhighlight
+        SCNTransaction.completionBlock = {
             SCNTransaction.begin()
             SCNTransaction.animationDuration = 0.5
             
-            // on completion - unhighlight
-            SCNTransaction.completionBlock = {
-                SCNTransaction.begin()
-                SCNTransaction.animationDuration = 0.5
-                
-                material.emission.contents = SCNColor.black
-                
-                SCNTransaction.commit()
-            }
-            
-            material.emission.contents = SCNColor.red
+            material.emission.contents = SCNColor.black
             
             SCNTransaction.commit()
         }
+        
+        material.emission.contents = SCNColor.red
+        
+        SCNTransaction.commit()
     }
     
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         // Called before each frame is rendered
 //        var total = SCNVector3(0,0,0)
         planets.forEach { planet in
-            planet.animate(planets: planets)
+            planet.animate(planets)
 //            total = total + planet.position
         }
         
@@ -199,6 +180,7 @@ class GameController: NSObject, SCNSceneRendererDelegate {
 //        cameraNode.position = pl.position
 //        cameraNode.position.y = pl.position.y + 500
         cameraNode.look(at: pl!.position)
+//        print(planetToLookAt.distance(to: planets[0]))
         
 //        print("===========")
 //        print("Planet #",id)

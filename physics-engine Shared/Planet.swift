@@ -15,7 +15,8 @@ public class Planet {
     public var radius: Double!
     public var velocity: SCNVector3!
     public var node: SCNNode!
-    public var closest: Planet?
+    public var scene: SCNScene!
+//    public var closest: Planet?
     
     public var position: SCNVector3 {
         set {
@@ -34,7 +35,7 @@ public class Planet {
         return lhs.id != rhs.id
     }
     
-    init(_ id: Int, mass: Double, radius: Double, position: SCNVector3, velocity: SCNVector3, color: SCNColor? = SCNColor(white: 1, alpha: 1)) {
+    init(_ id: Int, mass: Double, radius: Double, position: SCNVector3, velocity: SCNVector3, scene: SCNScene, color: SCNColor? = SCNColor(white: 1, alpha: 1)) {
         self.id = id
         self.mass = mass
         self.radius = radius
@@ -43,9 +44,44 @@ public class Planet {
         self.node = SCNNode(geometry: SCNSphere(radius: radius))
         self.node.geometry?.firstMaterial?.diffuse.contents = color
         self.position = position
+        self.node.castsShadow = true
+        createTrail()
+        
+        self.scene = scene
     }
     
-    func animate(planets: [Planet]) {
+    private func createTrail() {
+        let particleSystem = SCNParticleSystem()
+        particleSystem.birthRate = 10000 // 10000
+        particleSystem.particleLifeSpan = 100
+        particleSystem.warmupDuration = 0.5
+        particleSystem.emissionDuration = 500.0
+        particleSystem.loops = true
+        particleSystem.particleSize = 0.5
+        particleSystem.particleColor = SCNColor(white: 1, alpha: 0.01) // a:0.01
+        particleSystem.birthDirection = .random
+        particleSystem.speedFactor = 7
+        particleSystem.emittingDirection = SCNVector3(0,0,0)
+        particleSystem.emitterShape = .some(SCNSphere(radius: 1.0))
+        particleSystem.spreadingAngle = 30
+//        particleSystem.acceleration = SCNVector3(0.0,-1.8,0.0)
+        self.node.addParticleSystem(particleSystem)
+    }
+    
+    private func addLight() {
+        let lightNode = SCNNode()
+        let light = SCNLight()
+        light.type = .ambient
+        light.intensity = 100
+        light.shadowRadius = 1
+        light.color = SCNColor(white: 0.5, alpha: 1)
+        light.castsShadow = true
+        lightNode.light = light
+        self.node.addChildNode(lightNode)
+    }
+    
+    func animate(_ planets: [Planet]) {
+        // Probably not the fastest way to animate all planets
         planets.forEach { p in
             if p != self {
                 let nume = (gravitationalConstant * self.mass * p.mass)
@@ -72,14 +108,15 @@ public class Planet {
         let direction = planet.position - self.position
         let forceVector = direction * -force
         let acceleration = forceVector / mass
+//        self.node.particleSystems?.first?.birthRate = velocity.magnitude() * 50000 // Too Laggy
         
-        if let c = closest {
-            if (planet.distance(to: self) < c.distance(to: self)) {
-                self.closest = planet
-            }
-        } else {
-            closest = planet
-        }
+//        if let c = closest {
+//            if (planet.distance(to: self) < c.distance(to: self)) {
+//                self.closest = planet
+//            }
+//        } else {
+//            closest = planet
+//        }
 //        self.position = self.position - forceVector
 //        print("force:", force)
 //        print("acceleration:", acceleration)
@@ -145,7 +182,7 @@ extension SCNVector3 {
     
     // MULTIPLICATION
     public static func *(lhs: SCNVector3, rhs: Double) -> SCNVector3 {
-        return SCNVector3(lhs.x * rhs, lhs.y * rhs, lhs.z * rhs)
+        return SCNVector3(Double(lhs.x) * rhs, Double(lhs.y) * rhs, Double(lhs.z) * rhs)
     }
     
     public static func *(lhs: Double, rhs: SCNVector3) -> SCNVector3 {
@@ -154,21 +191,21 @@ extension SCNVector3 {
     
     // DIVISION
     public static func /(lhs: SCNVector3, rhs: Double) -> SCNVector3 {
-        return SCNVector3(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs)
+        return SCNVector3(Double(lhs.x) / rhs, Double(lhs.y) / rhs, Double(lhs.z) / rhs)
     }
     
     public static func /(lhs: Double, rhs: SCNVector3) -> SCNVector3 {
-        return SCNVector3(lhs / rhs.x, lhs / rhs.y, lhs / rhs.y)
+        return SCNVector3(lhs / Double(rhs.x), lhs / Double(rhs.y), lhs / Double(rhs.y))
     }
     
     // DOT PRODUCT
     public static func •(lhs: SCNVector3, rhs: SCNVector3) -> Double {
-        return lhs.x * rhs.x + lhs.y * rhs.y + lhs.z * rhs.z
+        return Double(lhs.x * rhs.x + lhs.y * rhs.y + lhs.z * rhs.z)
     }
     
     // MAGNITUDE
     public func magnitude() -> Double {
-        return sqrt(pow(self.x, 2) + pow(self.y, 2) + pow(self.z, 2))
+        return Double(sqrt(pow(self.x, 2) + pow(self.y, 2) + pow(self.z, 2)))
     }
     
     // DISTANCE
