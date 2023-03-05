@@ -38,7 +38,7 @@ class GameController: NSObject, SCNSceneRendererDelegate {
     
     init(sceneRenderer renderer: SCNSceneRenderer) {
         sceneRenderer = renderer
-        scene = SCNScene(named: "Art.scnassets/ship.scn")!
+        scene = SCNScene(named: "Art.scnassets/space.scn")!
         
         super.init()
         sceneRenderer.delegate = self
@@ -83,7 +83,9 @@ class GameController: NSObject, SCNSceneRendererDelegate {
             let earth = Planet(planets.count, mass: 6e12, radius: 6731, position: SCNVector3(0,0,12000), velocity: SCNVector3(5,0,0), scene: scene, color: SCNColor(red: 0, green: 0, blue: 1, alpha: 1))
             earth.node.geometry?.firstMaterial?.diffuse.contents = SCNImage(named: "2k_earth_january")
             earth.node.geometry?.firstMaterial?.metalness.contents = SCNImage(named: "2k_earth_specular_map")
-            earth.node.geometry?.firstMaterial?.clearCoatRoughness.contents = SCNImage(named: "2k_earth_specular_map")
+            if #available(iOS 13.0, macOS 10.15, *) {
+                earth.node.geometry?.firstMaterial?.clearCoatRoughness.contents = SCNImage(named: "2k_earth_specular_map")
+            }
             earth.node.geometry?.firstMaterial?.normal.contents = SCNImage(named: "2k_earth_normal_map")
             earth.node.geometry?.firstMaterial?.emission.contents = SCNImage(named: "world_emission_2k")
             planets.append(earth)
