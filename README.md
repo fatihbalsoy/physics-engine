@@ -9,13 +9,13 @@ Physics Engine* is a simple SceneKit application that simulates gravity and mome
 
 ## Installation
 
-<!-- ### macOS
-You can download the latest version of the application with the `.dmg` file extension [here](https://github.com/fatihbalsoy/physics-engine/releases/). To install, open the `.dmg` file and drag EscapeKey into your Applications folder. To launch the app for the first time, right-click it and click `Open`. -->
+### macOS
+You can download the latest version of the application with the `.dmg` file extension [here](https://github.com/fatihbalsoy/physics-engine/releases/). To install, open the `.dmg` file and drag Physics Engine* into your Applications folder. To launch the app for the first time, right-click it and click `Open`.
 
-<!-- ### iOS & tvOS -->
+### iOS & tvOS
 Download this repository, build the project in Xcode, and enjoy!
 
-<!-- Easier instructions will be available once Apple gives in to the idea of a third-party app store on iOS. -->
+Easier instructions will be available once Apple gives in to the idea of a third-party app store on iOS.
 
 ## Gameplay
 
